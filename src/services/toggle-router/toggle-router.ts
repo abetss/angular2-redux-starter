@@ -1,14 +1,15 @@
-import { featureToggleConfig } from '../../feature-toggle.config';
+import {featureToggleConfig} from '../../feature-toggle.config';
 
-function createToggleRouter(featureConfig = {}){
+function createToggleRouter(featureConfig = {}) {
   return {
-    setFeature(featureName, isEnabled){
+    setFeature(featureName, isEnabled) {
       featureConfig[featureName].isEnabled = isEnabled;
     },
-    featureIsEnabled(featureName){
-      // TODO: check if feature toggle should be expired log a warning or should we write tests for feature-toggle.config
-      // to check the shouldBeExpired
+    featureIsEnabled(featureName) {
       return featureConfig[featureName].isEnabled;
+    },
+    getFeature(newFeatureName, newFeature, oldFeature) {
+      return this.featureIsEnabled(newFeatureName) ? newFeature : oldFeature;
     }
   };
 }
