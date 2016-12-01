@@ -13,13 +13,15 @@ describe('counter reducer', () => {
   it('should have an immutable initial state', () => {
     expect(Iterable.isIterable(initState)).toBe(true);
   });
-  
+
   it('should increment state.count on INCREMENT_COUNTER', () => {
     const previousValue = initState.counter;
     const nextState = counterReducer(
       initState,
       { type: CounterActions.INCREMENT_COUNTER });
-    expect(nextState.counter).toEqual(1);
+    // change the following assertion to get it align with the formula interface
+    // expect(nextState.counter).toEqual(1);
+    expect(nextState.counter > previousValue).toBeTruthy();
   });
 
   it('should decrement state.count on DECREMENT_COUNTER', () => {
@@ -27,7 +29,9 @@ describe('counter reducer', () => {
     const nextState = counterReducer(
       initState,
       { type: CounterActions.DECREMENT_COUNTER });
-    expect(nextState.counter).toEqual(previousValue - 1);
+    // change the following assertion to get it align with the formula interface
+    // expect(nextState.counter).toEqual(previousValue - 1);
+    expect(nextState.counter < previousValue).toBeTruthy();
   });
 
   it('should clear the counter on LOGOUT_USER', () => {
