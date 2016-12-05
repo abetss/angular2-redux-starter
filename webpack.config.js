@@ -83,6 +83,11 @@ const prodConfig = {
   devtool: 'source-map',
 };
 
+const ymlLoader = {
+  test: /\.yml$/,
+  loader: 'yml'
+};
+
 const baseConfig = {
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.ts', '.js'],
@@ -108,6 +113,7 @@ const baseConfig = {
       loaders.woff2,
       loaders.ttf,
       loaders.json,
+      ymlLoader
     ],
     noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ],
   },

@@ -1,0 +1,11 @@
+new-formula:
+  isEnabled: true
+  description: >
+    Change by the factor of 5. It intends to replace OldFormula with NewFormula.
+  shouldExpireAt: 08-13-2016
+  responsible: Abtin Ghods
+  cleanUpHowTo: >
+    in the formula/index.ts - remove the toggleRouter.getFeature
+    and instead get the NewFormula directly - delete the old-formula directory
+    - remove the OldFormula reference from the formula/index.ts
+  group:

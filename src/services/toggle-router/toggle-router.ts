@@ -1,4 +1,4 @@
-import {featureToggleConfig} from '../../feature-toggle.config';
+let featureToggleConfig = require('./../../../feature-toggle.yml');
 
 function createToggleRouter(featureConfig = {}) {
   return {
