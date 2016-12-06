@@ -85,7 +85,7 @@ const prodConfig = {
 
 const ymlLoader = {
   test: /\.yml$/,
-  loader: 'yml'
+  loader: 'yml',
 };
 
 const baseConfig = {
@@ -113,7 +113,7 @@ const baseConfig = {
       loaders.woff2,
       loaders.ttf,
       loaders.json,
-      ymlLoader
+      ymlLoader,
     ],
     noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ],
   },
