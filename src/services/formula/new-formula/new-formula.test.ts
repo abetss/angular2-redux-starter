@@ -7,6 +7,10 @@ describe('Service: NewFormula', () => {
       expect(NewFormula.increment(2)).toEqual(jasmine.any(Number));
     });
 
+    it('should increase the given value', () => {
+      expect(NewFormula.increment(2) > 2).toBeTruthy();
+    });
+
     it('should increase the given value by 5', () => {
       expect(NewFormula.increment(2)).toEqual(7);
     });
@@ -16,6 +20,10 @@ describe('Service: NewFormula', () => {
 
     it('should return a number given a number', () => {
       expect(NewFormula.decrement(2)).toEqual(jasmine.any(Number));
+    });
+
+    it('should decrease the given value', () => {
+      expect(NewFormula.decrement(2) < 2).toBeTruthy();
     });
 
     it('should decrease the given value by 5', () => {
