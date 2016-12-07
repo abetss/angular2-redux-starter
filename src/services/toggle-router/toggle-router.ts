@@ -2,21 +2,21 @@
 let featureToggleConfig = require('./../../../feature-toggle.yml');
 // import { featureToggleConfig } from '../../toggle-config';
 import { NewFormula } from '../formula/new-formula';
-import { OldFormula } from '../formula/old-forumla/';
-import { NEW_FEATURE } from './toggles';
+import { DefaultFormula } from '../formula/default-formula/';
+import { NEW_FORMULA_TOGGLE } from './toggles';
 
 export function createToggleRouter(featureConfig = {}) {
   const featureIsEnabled = featureName =>
     !featureConfig[featureName] ? false : featureConfig[featureName].isEnabled;
-  const getFeature = (newFeatureName, newFeature, oldFeature) =>
-    featureIsEnabled(newFeatureName) ? newFeature : oldFeature;
+  const getFeature = (newFeatureName, newFeature, defaultFeature) =>
+    featureIsEnabled(newFeatureName) ? newFeature : defaultFeature;
 
   return {
     setFeature(featureName, isEnabled) {
       featureConfig[featureName].isEnabled = isEnabled;
     },
     createFormula() {
-      return getFeature(NEW_FEATURE, NewFormula, OldFormula);
+      return getFeature(NEW_FORMULA_TOGGLE, NewFormula, DefaultFormula);
     }
   };
 }

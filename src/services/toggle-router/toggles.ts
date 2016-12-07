@@ -1,1 +1,1 @@
-export const NEW_FEATURE = 'new-formula';
+export const NEW_FORMULA_TOGGLE = 'new-formula';

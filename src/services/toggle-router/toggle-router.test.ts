@@ -1,6 +1,6 @@
 import { createToggleRouter } from './toggle-router';
 import { NewFormula } from '../formula/new-formula';
-import { OldFormula } from '../formula/old-forumla/';
+import { DefaultFormula } from '../formula/default-formula/';
 
 describe('Service: Toggle', () => {
   let toggleRouter;
@@ -20,7 +20,7 @@ describe('Service: Toggle', () => {
     };
     toggleRouter = createToggleRouter(featureToggleConfig);
     const Formula = toggleRouter.createFormula();
-    expect(Formula).toBe(OldFormula);
+    expect(Formula).toBe(DefaultFormula);
   });
 
   it('should return the old Formula if the formula toggle config did no' +
@@ -28,6 +28,6 @@ describe('Service: Toggle', () => {
     let featureToggleConfig = {};
     toggleRouter = createToggleRouter(featureToggleConfig);
     const Formula = toggleRouter.createFormula();
-    expect(Formula).toBe(OldFormula);
+    expect(Formula).toBe(DefaultFormula);
   });
 });

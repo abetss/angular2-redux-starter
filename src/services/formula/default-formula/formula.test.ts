@@ -1,6 +1,6 @@
 import { Formula } from './formula';
 
-describe('Service: OldFormula', () => {
+describe('Service: DefaultFormula', () => {
   describe('increment', () => {
 
     it('should return a number given a number', () => {
